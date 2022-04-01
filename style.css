@@ -4,12 +4,13 @@
 
 #map {
   height: 900px;
-  /* The height is 400 pixels */
   width: 100%;
   /* The width is the width of the web page */
   margin-top: 52px;
+  /* Give space from header with mtop */
 }
 
+/* stylings for video */
 .vid {
   height: 900px;
   width: 100%;
@@ -26,6 +27,7 @@
   flex-shrink: 0;
 }
 
+/* Stylings for header links */
 #contain a {
   float: left;
   display: block;
@@ -33,9 +35,10 @@
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+  transition: background-color 1s ease-out 10ms;
 }
 #contain a:hover {
-  background: #ddd;
+  background-color: #ddd;
   color: black;
 }
 
