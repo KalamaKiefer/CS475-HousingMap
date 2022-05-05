@@ -15,39 +15,43 @@ function initMap() {
     center: hilo,
   });
 
-  const punaGraph = "<div><img src='rent.png'></div>";
-  const hiloGraph = "<div><img src='rent.png'></div>";
-  const hamakuaGraph = "<div><img src='rent.png'></div>";
-  const kohalaGraph = "<div><img src='rent.png'></div>";
-  const kauGraph = "<div><img src='rent.png'></div>";
-  const konaGraph = "<div><img src='rent.png'></div>";
-  const islandGraph = "<div><img src='rent.png'></div>";
+  // All graph data for each location
+
+  const punaGraph = "<div><img src='puna.png'></div>";
+  const hiloGraph = "<div><img src='hilo.png'></div>";
+  const hamakuaGraph = "<div><img src='hamakua.png'></div>";
+  const kohalaGraph = "<div><img src='kohala.png'></div>";
+  const kauGraph = "<div><img src='kau.png'></div>";
+  const konaGraph = "<div><img src='kona.png'></div>";
+  const islandGraph = "<div><img src='hawaii.png'></div>";
+
+  // Starts info windows
 
   const punaWindow = new google.maps.InfoWindow({
     content: punaGraph,
   });
 
   const hiloWindow = new google.maps.InfoWindow({
-    content: punaGraph,
+    content: hiloGraph,
   });
 
   const hamakuaWindow = new google.maps.InfoWindow({
-    content: punaGraph,
+    content: hamakuaGraph,
   });
   const kohalaWindow = new google.maps.InfoWindow({
-    content: punaGraph,
+    content: kohalaGraph,
   });
 
   const kauWindow = new google.maps.InfoWindow({
-    content: punaGraph,
+    content: kauGraph,
   });
 
   const konaWindow = new google.maps.InfoWindow({
-    content: punaGraph,
+    content: konaGraph,
   });
 
   const islandWindow = new google.maps.InfoWindow({
-    content: punaGraph,
+    content: islandGraph,
   });
 
   // Ends Info Windows
@@ -149,4 +153,6 @@ function initMap() {
       shouldFocus: false,
     });
   });
-}
+
+  // Ends Marker Listeners
+} // ends init map
