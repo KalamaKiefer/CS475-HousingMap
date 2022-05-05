@@ -1,93 +1,152 @@
 // Initialize and add the map
 function initMap() {
-    // The location of Hilo
-    const hilo = { lat: 19.7241, lng: 204.92 };
-    const kona = { lat: 19.63, lng: 204 };
-    const naalehu = { lat: 19.05, lng: 204.42 };
-    
-    
-    
-    // The map, centered at Hilo
-    const map = new google.maps.Map(document.getElementById("map"), {
-      zoom: 9,
-      center: hilo,
+  // The location of Hilo
+  const puna = { lat: 19.561686890970694, lng: -155.0954991182228 };
+  const hilo = { lat: 19.7241, lng: 204.92 };
+  const hamakua = { lat: 19.9916, lng: -155.2419 };
+  const kohala = { lat: 20.088787869961966, lng: -155.71836094207646 };
+  const kau = { lat: 19.296113597730706, lng: -155.53512452299208 };
+  const kona = { lat: 19.647, lng: 204 };
+  const island = { lat: 19.54810212316036, lng: -155.67210351448992 };
+
+  // The map, centered at Hilo
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 9,
+    center: hilo,
+  });
+
+  const punaGraph = "<div><img src='rent.png'></div>";
+  const hiloGraph = "<div><img src='rent.png'></div>";
+  const hamakuaGraph = "<div><img src='rent.png'></div>";
+  const kohalaGraph = "<div><img src='rent.png'></div>";
+  const kauGraph = "<div><img src='rent.png'></div>";
+  const konaGraph = "<div><img src='rent.png'></div>";
+  const islandGraph = "<div><img src='rent.png'></div>";
+
+  const punaWindow = new google.maps.InfoWindow({
+    content: punaGraph,
+  });
+
+  const hiloWindow = new google.maps.InfoWindow({
+    content: punaGraph,
+  });
+
+  const hamakuaWindow = new google.maps.InfoWindow({
+    content: punaGraph,
+  });
+  const kohalaWindow = new google.maps.InfoWindow({
+    content: punaGraph,
+  });
+
+  const kauWindow = new google.maps.InfoWindow({
+    content: punaGraph,
+  });
+
+  const konaWindow = new google.maps.InfoWindow({
+    content: punaGraph,
+  });
+
+  const islandWindow = new google.maps.InfoWindow({
+    content: punaGraph,
+  });
+
+  // Ends Info Windows
+
+  // Starts Markers
+
+  // New google marker, positioned on puna coordinates
+  const punaMarker = new google.maps.Marker({
+    position: puna,
+    map: map,
+  });
+
+  const hiloMarker = new google.maps.Marker({
+    position: hilo,
+    map: map,
+  });
+
+  const hamakuaMarker = new google.maps.Marker({
+    position: hamakua,
+    map: map,
+  });
+
+  const kohalaMarker = new google.maps.Marker({
+    position: kohala,
+    map: map,
+  });
+
+  const kauMarker = new google.maps.Marker({
+    position: kau,
+    map: map,
+  });
+
+  const konaMarker = new google.maps.Marker({
+    position: kona,
+    map: map,
+  });
+
+  const islandMarker = new google.maps.Marker({
+    position: island,
+    map: map,
+  });
+
+  // Ends Markers
+
+  // Starts Marker Listeners
+
+  punaMarker.addListener("click", () => {
+    punaWindow.open({
+      anchor: punaMarker,
+      map,
+      shouldFocus: false,
     });
-    
-    const contentString =
-      '<div id="content">' +
-      '<div id="siteNotice">' +
-      "</div>" +
-      '<h1 id="firstHeading" class="firstHeading">Hilo</h1>' +
-      '<div id="bodyContent">' +
-      "<p><b>Hilo Real Estate Data</b>: <br/>" +
-      "Year 1: Avg Price: 450k<br/>" +
-      "Year 2: Avg Price: 570k<br/>" +    
-      "Year 3: Avg Price: 674k<br/>" +
-      "Year 4: Avg Price: 938k<br/>" +
-      "Year 5: Avg Price: 1m.</p><br/>" +
-      "</div>" +
-      "</div>";
-      
-      const contentString2 =
-      '<div id="content">' +
-      '<div id="siteNotice">' +
-      "</div>" +
-      '<h1 id="firstHeading" class="firstHeading">Kona</h1>' +
-      '<div id="bodyContent">' +
-      "<p><b>Kona Real Estate Data</b>: <br/>" +
-      "Year 1: Avg Price: 450k<br/>" +
-      "Year 2: Avg Price: 570k<br/>" +    
-      "Year 3: Avg Price: 674k<br/>" +
-      "Year 4: Avg Price: 938k<br/>" +
-      "Year 5: Avg Price: 1m.</p><br/>" +
-      "</div>" +
-      "</div>";
-  
-    const infowindow = new google.maps.InfoWindow({
-      content: contentString,
+  });
+
+  hiloMarker.addListener("click", () => {
+    hiloWindow.open({
+      anchor: hiloMarker,
+      map,
+      shouldFocus: false,
     });
-    
-     const infowindow2 = new google.maps.InfoWindow({
-      content: contentString2,
+  });
+
+  hamakuaMarker.addListener("click", () => {
+    hamakuaWindow.open({
+      anchor: hamakuaMarker,
+      map,
+      shouldFocus: false,
     });
-    
-    // The marker, positioned on big island
-    const marker = new google.maps.Marker({
-      position: hilo,
-      map: map,
+  });
+
+  kohalaMarker.addListener("click", () => {
+    kohalaWindow.open({
+      anchor: kohalaMarker,
+      map,
+      shouldFocus: false,
     });
-    
-    const marker2 = new google.maps.Marker({
-      position: kona,
-      map: map,
+  });
+
+  kauMarker.addListener("click", () => {
+    kauWindow.open({
+      anchor: kauMarker,
+      map,
+      shouldFocus: false,
     });
-    
-    const marker3 = new google.maps.Marker({
-      position: naalehu,
-      map: map,
+  });
+
+  konaMarker.addListener("click", () => {
+    konaWindow.open({
+      anchor: konaMarker,
+      map,
+      shouldFocus: false,
     });
-    
-    marker.addListener("click", () => {
-      infowindow.open({
-        anchor: marker,
-        map,
-        shouldFocus: false,
-      });
+  });
+
+  islandMarker.addListener("click", () => {
+    islandWindow.open({
+      anchor: islandMarker,
+      map,
+      shouldFocus: false,
     });
-    
-    marker2.addListener("click", () => {
-      infowindow2.open({
-        anchor: marker2,
-        map,
-        shouldFocus: false,
-      });
-    });
-    
-    marker3.addListener("click", () => {
-      infowindow2.open({
-        anchor: marker3,
-        map,
-        shouldFocus: false,
-      });
-    });
-  }
+  });
+}
